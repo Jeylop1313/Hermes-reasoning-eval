@@ -1,51 +1,51 @@
 IMPLICATIONS_PROMPT = """
-You are HERMES. You have completed SEC 1 — Relevance.
-Now run SEC 2 — Implication: assess what the author believes 
-this event means for them.
+Eres HERMES. Has completado el SEC 1 — Relevancia.
+Ahora ejecuta el SEC 2 — Implicación: evalúa qué cree el autor 
+que significa este evento para él.
 
-COMMENT: {comment}
-AUTHOR CONTEXT: {Avatar}
+COMENTARIO: {comment}
+CONTEXTO DEL AUTOR: {Avatar}
 
-SEC 1 OUTPUT:
+SALIDA SEC 1:
 {relevance_output}
 
 ---
 
-## SEC 2 — IMPLICATION
+## SEC 2 — IMPLICACIÓN
 
-Answer each question in 1-2 sentences.
-Cite the specific word or phrase from the comment that supports 
-your answer. If no linguistic evidence exists, write "no signal."
+Responde cada pregunta en 1-2 oraciones.
+Cita la palabra o frase específica del comentario que sustenta 
+tu respuesta. Si no existe evidencia lingüística, escribe "sin señal."
 
-Causal Attribution: Who or what does the author hold responsible 
-for this situation — themselves, another person, an institution, 
-chance, or no one? Look for: direct blame markers ("you", "they", 
-"he/she"), accusatory framing, named agents, or the absence of 
-any external target.
+Atribución Causal: ¿A quién o qué responsabiliza el autor de 
+esta situación — a sí mismo, a otra persona, a una institución, 
+al azar, o a nadie? Busca: marcadores directos de culpa ("tú", "ellos", 
+"él/ella"), encuadre acusatorio, agentes nombrados, o la ausencia 
+de cualquier objetivo externo.
 
-Goal Conduciveness: Does the author signal that this event helps 
-or blocks something they care about — or that it opens or closes 
-a possibility? Look for: achievement markers ("finally", "managed", 
-"got"), obstruction markers ("can't", "won't", "blocked", "lost"), 
-or forward-looking possibility markers ("maybe", "could", "going to").
+Conducencia hacia la Meta: ¿Señala el autor que este evento ayuda 
+o bloquea algo que le importa — o que abre o cierra una posibilidad? 
+Busca: marcadores de logro ("por fin", "logré", "conseguí"), marcadores 
+de obstrucción ("no puedo", "no va a", "bloqueado", "perdido"), 
+o marcadores de posibilidad futura ("quizás", "podría", "voy a").
 
-Discrepancy from Expectation: Does the author signal that this 
-outcome is different from what they expected — better, worse, 
-or simply surprising? Look for: contrast markers ("but", "yet", 
-"still", "even though", "instead"), explicit surprise, or 
-expressions of ironic resignation.
+Discrepancia respecto a la Expectativa: ¿Señala el autor que este 
+resultado es diferente de lo que esperaba — mejor, peor, o simplemente 
+sorprendente? Busca: marcadores de contraste ("pero", "sin embargo", 
+"aún", "aunque", "en cambio"), sorpresa explícita, o expresiones 
+de resignación irónica.
 
-Urgency: Does the author signal that this requires immediate 
-attention or action — or that time pressure is a factor? 
-If no signal, write "no signal" and move on.
+Urgencia: ¿Señala el autor que esto requiere atención o acción 
+inmediata — o que la presión del tiempo es un factor? 
+Si no hay señal, escribe "sin señal" y continúa.
 
-## SYNTHESIS
-In 2-3 sentences: what does the implication assessment add to 
-what SEC 1 already found? Specifically state:
-- CAUSAL_AGENT: [self / other / institution / chance / absent]
-- CONDUCIVENESS: [facilitative / obstructive / neutral]
-- IMPLICATION_SIGNAL: [the single strongest marker found]
+## SÍNTESIS
+En 2-3 oraciones: ¿qué añade la evaluación de implicación a lo que 
+ya encontró el SEC 1? Indica específicamente:
+- AGENTE_CAUSAL: [uno mismo / otro / institución / azar / ausente]
+- CONDUCENCIA: [facilitadora / obstructiva / neutral]
+- SEÑAL_IMPLICACIÓN: [el marcador más fuerte encontrado]
 
-Stop after SYNTHESIS. Do not add sections or commentary beyond 
-what is requested above.
+Detente después de la SÍNTESIS. No agregues secciones ni comentarios 
+más allá de lo solicitado arriba.
 """

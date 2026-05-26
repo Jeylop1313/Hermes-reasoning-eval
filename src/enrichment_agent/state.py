@@ -36,11 +36,11 @@ class ConvergenceSemEval2017(BaseModel):
     """Sentiment classifier (SemEval-2017 Task 4A) — ternary."""
     sentiment_label: Literal["positive", "negative", "neutral"] = Field(
         ...,
-        description="Final sentiment classification (SemEval-2017 ternary taxonomy)."
+        description="Clasificación final de sentimiento (taxonomía ternaria SemEval-2017)."
     )
     reasoning: str = Field(
         ..., max_length=1500,
-        description="Justification connecting the 4 SEC appraisals to the final sentiment label."
+        description="Justificación que conecta las 4 valoraciones SEC con la etiqueta final de sentimiento."
     )
 
 
@@ -48,11 +48,11 @@ class ConvergenceTweetEval(BaseModel):
     """Emotion classifier (TweetEval Emotion) — 4 classes."""
     sentiment_label: Literal["anger", "joy", "optimism", "sadness"] = Field(
         ...,
-        description="Final emotion classification (TweetEval 4-class taxonomy)."
+        description="Clasificación final de emoción (taxonomía de 4 clases TweetEval)."
     )
     reasoning: str = Field(
         ..., max_length=1500,
-        description="Justification connecting the 4 SEC appraisals to the final emotion label."
+        description="Justificación que conecta las 4 valoraciones SEC con la etiqueta final de emoción."
     )
 
 
@@ -60,12 +60,25 @@ class ConvergenceSemEval2018(BaseModel):
     """Irony classifier (SemEval-2018 Task 3 Subtask A) — binary."""
     sentiment_label: Literal["irony", "not_irony"] = Field(
         ...,
-        description="Final irony classification (SemEval-2018 Task 3A binary taxonomy)."
+        description="Clasificación final de ironía (taxonomía binaria SemEval-2018 Task 3A)."
     )
     reasoning: str = Field(
         ..., max_length=1500,
-        description="Justification connecting the 4 SEC appraisals to the final irony label."
+        description="Justificación que conecta las 4 valoraciones SEC con la etiqueta final de ironía."
     )
+
+
+class ConvergenceTASS2019PE(BaseModel):
+    """Sentiment classifier (TASS 2019 Perú) — 4 classes."""
+    sentiment_label: Literal["P", "N", "NEU", "NONE"] = Field(
+        ...,
+        description="Clasificación final de sentimiento (taxonomía TASS 2019: P, N, NEU, NONE)."
+    )
+    reasoning: str = Field(
+        ..., max_length=1500,
+        description="Justificación que conecta las 4 valoraciones SEC con la etiqueta final de sentimiento."
+    )
+
 
 # ============================================================
 # STATE

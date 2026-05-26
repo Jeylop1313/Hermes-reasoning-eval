@@ -24,9 +24,9 @@ async def search(
     *,
     config: Annotated[RunnableConfig, InjectedToolArg]
 ) -> Optional[list[dict[str, Any]]]:
-    """General web search.
+    """Búsqueda web general.
 
-    Useful for fact-checking, finding information about events, people, or topics.
+    Útil para verificar hechos, encontrar información sobre eventos, personas o temas.
     """
     configuration = Configuration.from_runnable_config(config)
     wrapped = TavilySearch(
@@ -43,10 +43,10 @@ async def search_news(
     *,
     config: Annotated[RunnableConfig, InjectedToolArg]
 ) -> Optional[list[dict[str, Any]]]:
-    """Recent news search.
+    """Búsqueda de noticias recientes.
 
-    Useful for finding current events or recent developments.
-    Activate via USE_NEWS_SEARCH=True in Graph.py.
+    Útil para encontrar eventos actuales o desarrollos recientes.
+    Activar mediante USE_NEWS_SEARCH=True en Graph.py.
     """
     configuration = Configuration.from_runnable_config(config)
     wrapped = TavilySearch(

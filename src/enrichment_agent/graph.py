@@ -20,6 +20,7 @@ from enrichment_agent.State import (
     ConvergenceSemEval2017,
     ConvergenceTweetEval,
     ConvergenceSemEval2018,
+    ConvergenceTASS2019PE,
 )
 from enrichment_agent.relevance import RELEVANCE_PROMPT
 from enrichment_agent.implications import IMPLICATIONS_PROMPT
@@ -28,6 +29,7 @@ from enrichment_agent.normative import NORMATIVE_PROMPT
 from enrichment_agent.converge_semeval2017 import CONVERGENCE_PROMPT as CONVERGENCE_PROMPT_SEMEVAL2017
 from enrichment_agent.converge_tweeteval import CONVERGENCE_PROMPT as CONVERGENCE_PROMPT_TWEETEVAL
 from enrichment_agent.converge_semeval2018 import CONVERGENCE_PROMPT as CONVERGENCE_PROMPT_SEMEVAL2018
+from enrichment_agent.converge_tass2019PE import CONVERGENCE_PROMPT as CONVERGENCE_PROMPT_TASS2019PE
 
 from enrichment_agent.configuration import Configuration
 from enrichment_agent.tools import search_news, search
@@ -41,6 +43,7 @@ CONVERGENCE_VARIANTS = {
     "semeval2017": (CONVERGENCE_PROMPT_SEMEVAL2017, ConvergenceSemEval2017),
     "tweeteval":   (CONVERGENCE_PROMPT_TWEETEVAL,   ConvergenceTweetEval),
     "semeval2018": (CONVERGENCE_PROMPT_SEMEVAL2018, ConvergenceSemEval2018),
+    "tass2019PE":  (CONVERGENCE_PROMPT_TASS2019PE,  ConvergenceTASS2019PE),
 }
 
 DEFAULT_CONVERGENCE_VARIANT = "semeval2017"
@@ -111,17 +114,17 @@ def _build_sec_node(
             messages.append(
                 HumanMessage(
                     content=(
-                        "REASONING PHASE.\n"
+                        "FASE DE RAZONAMIENTO.\n"
                         + (
-                            "BEFORE reasoning: do you have enough context about what the tweet refers to?\n"
-                            "If not, use the available search tool and reason with the results.\n"
-                            "If yes, reason directly.\n\n"
+                            "ANTES de razonar: ¿tienes suficiente contexto sobre a qué se refiere el tweet?\n"
+                            "Si NO: usa la herramienta de búsqueda disponible y razona con los resultados.\n"
+                            "Si SÍ: razona directamente.\n\n"
                             if has_tools else ""
                         )
-                        + "REASON about what the comment means for this SEC:\n"
-                        "- What evidence is relevant?\n"
-                        "- What does it imply for the avatar?\n"
-                        "DO NOT record your evaluation yet."
+                        + "RAZONA sobre lo que significa el comentario para este SEC:\n"
+                        "- ¿Qué evidencia es relevante?\n"
+                        "- ¿Qué implica para el avatar?\n"
+                        "NO registres tu evaluación todavía."
                     )
                 )
             )
@@ -135,10 +138,10 @@ def _build_sec_node(
             messages.append(
                 HumanMessage(
                     content=(
-                        "REASON about what the comment means for this SEC:\n"
-                        "- What evidence is relevant?\n"
-                        "- What does it imply for the avatar?\n"
-                        "DO NOT record your evaluation yet."
+                        "RAZONA sobre lo que significa el comentario para este SEC:\n"
+                        "- ¿Qué evidencia es relevante?\n"
+                        "- ¿Qué implica para el avatar?\n"
+                        "NO registres tu evaluación todavía."
                     )
                 )
             )
@@ -231,7 +234,7 @@ async def convergence_node(
 
     convergence_tool = {
         "name": "ConvergenceInfo",
-        "description": "Register your integrative synthesis of the 4 SECs.",
+        "description": "Registra tu síntesis integradora de los 4 SEC.",
         "parameters": convergence_schema.model_json_schema(),
     }
 

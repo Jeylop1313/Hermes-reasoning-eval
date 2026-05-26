@@ -1,49 +1,49 @@
 NORMATIVE_PROMPT = """
-You are HERMES. You have completed SEC 1 and SEC 2.
-Now run SEC 3 — Normative Significance: assess whether the author 
-signals that standards, values, or norms are at stake.
+Eres HERMES. Has completado el SEC 1 y el SEC 2.
+Ahora ejecuta el SEC 3 — Significancia Normativa: evalúa si el autor 
+señala que estándares, valores o normas están en juego.
 
-COMMENT: {comment}
-AUTHOR CONTEXT: {Avatar}
+COMENTARIO: {comment}
+CONTEXTO DEL AUTOR: {Avatar}
 
-SEC 1 OUTPUT: {relevance_output}
-SEC 2 OUTPUT: {implication_output}
-SEC 3 OUTPUT: {coping_output}
+SALIDA SEC 1: {relevance_output}
+SALIDA SEC 2: {implication_output}
+SALIDA SEC 3: {coping_output}
 
 ---
 
-## SEC 3 — NORMATIVE SIGNIFICANCE
+## SEC 3 — SIGNIFICANCIA NORMATIVA
 
-Answer each question in 1-2 sentences.
-Cite the specific word or phrase from the comment that supports 
-your answer. If no linguistic evidence exists, write "no signal."
+Responde cada pregunta en 1-2 oraciones.
+Cita la palabra o frase específica del comentario que sustenta 
+tu respuesta. Si no existe evidencia lingüística, escribe "sin señal."
 
-Internal Standards: Does the author signal that a personal value, 
-moral code, or self-ideal is at stake — either violated or upheld?
-Look for: moral language, expressions of personal principle, or 
-signals of pride or shame.
+Estándares Internos: ¿Señala el autor que un valor personal, 
+código moral o ideal propio está en juego — ya sea violado o sostenido?
+Busca: lenguaje moral, expresiones de principio personal, o 
+señales de orgullo o vergüenza.
 
-External Standards: Does the author invoke shared social norms, 
-group expectations, or collective values?
-Look for: collective language, calls to action directed at a group, 
-or appeals to what is socially acceptable.
+Estándares Externos: ¿Invoca el autor normas sociales compartidas, 
+expectativas grupales o valores colectivos?
+Busca: lenguaje colectivo, llamados a la acción dirigidos a un grupo, 
+o apelaciones a lo socialmente aceptable.
 
-Positioning: How does the author position themselves relative to 
-the standard being invoked?
-Distinguish three cases:
-- Judge of others: condemning another person's behavior or character
-- Judge of self: condemning their own behavior or expressing 
-  frustration at their own failure to meet a standard — this signals 
-  anger directed inward, not sadness
-- Advocate: calling for a positive norm or collective action
+Posicionamiento: ¿Cómo se posiciona el autor respecto al estándar 
+que está invocando?
+Distingue tres casos:
+- Juez de otros: condena el comportamiento o carácter de otra persona
+- Juez de sí mismo: condena su propio comportamiento o expresa 
+  frustración ante su propio fracaso en cumplir un estándar — esto 
+  señala ira dirigida hacia adentro, no tristeza
+- Defensor: aboga por una norma positiva o acción colectiva
 
-This separates moral outrage toward others (anger), 
-self-directed frustration (anger), and moral aspiration (optimism).
-⚠ Self-directed negative judgment is not sadness — it is anger 
-without external attribution.
+Esto separa la indignación moral hacia otros (ira), 
+la frustración autodirigida (ira) y la aspiración moral (optimismo).
+⚠ El juicio negativo autodirigido no es tristeza — es ira 
+sin atribución externa.
 
-## SYNTHESIS
-Complete these three fields. No additional sections, no elaboration 
-beyond what the three fields require. Stop immediately after the 
-third field.
+## SÍNTESIS
+Completa estos tres campos. Sin secciones adicionales, sin elaboración 
+más allá de lo que requieren los tres campos. Detente inmediatamente 
+después del tercer campo.
 """
